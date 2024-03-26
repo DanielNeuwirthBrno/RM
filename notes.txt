@@ -1,0 +1,78 @@
+
+15:15-16:45
+
+[001] aktualne pada pri zahajeni zapasu (pravdepodobne z duvodu chybejiciho stadionu) - opravit
+[002] samostatna tabulka pro stadiony (kteremu klubu patri - a pro jake obdobi, kapacita, rok vystavby)
+[003] zobrazovat kapacitu stadionu v NextMatchWindow + do logu zapisovat, kolik divaku zapasu prihlizelo
+[004] opravit bug: Squadwidget/Bench - automatic selection, potom odebrat jednoho hrace (napr.c.16),
+      vybrat rucne jineho (bude mit prideleno c.23, ikdyz uz ho ma jiny hrac)
+[005] instalovat + zprovoznit Valgrind (prip. jiny tool na kontrolu memory leakage)
+[006] opravit memory leakage
+[007] db - hraci: ukladat prislusnost k ligovemu klubu/reprezentaci do samostatne tabulky
+      tabulky: Player, Team, Player_Team(od,do,no_of_games)
+      [hrac 170000 nepatri Glasgow Warriors pro 2018-19]
+      [hrac 180020 nepatri Brive pro 2018-19]
+[008] db - manazeri: ukladat prislusnost k ligovemu klubu/reprezentaci do samostatne tabulky
+      tabulky: Manager, Team, Manager_Team(od,do,no_of_games)
+[009] db - souteze: oddelit ukladani souteze a jednotlivych sezon, ve kterych se kona
+      tabulky: competition, competition_season, competition_club (zde je vazba na competion_season =>
+      je jasne, kteri hraci za dany klub v dane sezone hraji)
+[010] zavest moznost hrat jednotlivy zapas (mezi kluby vybrane souteze)
+[011] po vytvoreni nove hry (NewGame) vypsat zakladni informace o ni do dialog.okna (a pak znevyraznit tlacitko)
+[012] SaveGame - pro hrace (Player) implementovat ukladani: Condition, Health
+[013] SaveGame - i hrac bez odehraneho zapasu muze mit udaje k ulozeni (napr. byl zranen)
+[014] ulozeni vysledku zapasu (FixtureScore) - vyresit situaci, pokud se podari ulozit pouze vysledky jednoho tymu
+[015] LoadGame - kompletni implementace
+[016] FixturesWidget: po odehrani zapasu zobrazit zakladni statistiky
+[017] FixturesWidget: moznost zobrazit statistiky jednotlivych zapasu (pouzit spolecneho predka pro squad/fixtures?)
+[018] seznam soutezi - priznak v db, ze se nema nabizet v menu
+[019] trestna petka (za 7 bodu) - implementovat
+[020] generovat hrace (ligove souteze), pokud je jich nedostatek
+[021] zavest db tabulku TeamConfiguration - informace o vlastnim tymu
+[022] Pro14: ucastnici play-off - upravit (do prvniho kola postupuji nektere tymy ze zakl.casti, nektere z predkola play-off)
+[023] Champions Cup: ucastnici play-off - upravit (do play-off se postupuje dle specialni tabulky slozene z tymu vsech skupin)
+[024] implementovat BasicInfoWidget - zobrazit po NewGame, EndMatch, TimeShiftIcon, stisk dedikovaneho tlacitka
+[025] SquadWidget/PlayersWidget/StatsWidget - zavest pevny header
+[026] vytvorit git repository
+[027] custom input dialogy pri zakladani nove hry (napr. sirsi okno, vyssi radky, staty vc. vlajek)
+[028] vytvorit custom MessagyBoxy pro informace pri gameplay
+[029] QueryCondition - automatizovat vytvareni podminky
+[030] okno Update players' feature values (co se stane, kdyz zavru okno krizkem?)
+[031] rozhodci: nacitat mimo zemi i rugbyovou unii + zobrazovat ji u jmena
+[032] PlayersWidget: filtrovani - negovani filtru (opacny efekt)
+[033] PlayersWidget: filtrovani - vyhledavani dle jmena
+[034] PlayersWidget: filtrovani - zobrazovat pocet vyfiltrovanych zaznamu
+[035] PlayersWidget: filtrovani - zobrazit tucne hrace vlastniho tymu
+[036] PlayersWidget: filtrovani - zobrazeni zahlavi - usekly spodek pisma
+[037] PlayersWidget: filtrovani - filtrovani dle pozic: dle typu pozice?
+[038] PlayersWidget: filtrovani - filtrovat vsechny/zdrave/suspendovane
+[039] zavest prezdivky tymu
+[040] vlajecka (pouzita v squad,players,stats) - spolecna funkce? (+ zobrazit tooltip s nazvem zeme)
+[041] hrac ve hre: pravdepodobnost uspechu dle unava/forma/schopnosti/repr.starty/zebr.tymu
+[042] squadwidget - pridat tlacitko na odstraneni preferenci
+[043] pridat logo/nazev vlastniho tymu na titulni obrazovku
+[044] graficka moznost nastaveni mista kopu v zapase
+[045] vlastni QPushButton: restyle
+[046] atributy hracu - progressbar (zelena/zluta/cervena) - dle hodnoty
+[047] squadwidget - tlacitko - zobrazit rozlozeni hracu na hristi
+[048] zapas - progress bar - vyresit pripad, pokud je cas pres vymezeny cas (80:25)
+[049] zverejnovat informaci, ze souper pronikl do dvaadvacitky
+[050] territory (statistka) - rozdelit na 4 oblasti + graficky zobrazovat
+[051] zapas - pouziji tlacitko end match - dotaz, zda opravdu ukoncit zapas, pokud jeste neni na konci
+[052] nacist jednotlive dovednosti z db do qstringlistu (playerattributes)
+[053] draw - vyber strany (dle vetru, slunce)
+[054] system database does not exist - osetrit
+[055] user query - nazev db v titulku
+[056] upravit user query pro selecty (plnit results)
+[057] restore system db - zavest try/catch
+[058] six nations: three bonus points are awarded to a team that wins all five of their matches
+
+souteze (doplnit):
+RFU Championship 2018-2019 - hraci v tymech
+Guinness PRO14 2018-2019 - logo, rozhodci, hraci v tymech, rozpis play-off (viz nize)
+Heineken Champions Cup 2018-2019 - logo, hraci v tymech, rozpis play-off (viz nize)
+European Rugby Challenge Cup 2018-2019 - logo, hraci v tymech, rozpis play-off
+doplnit do PlayerInClubs hrace, kteri hrali HChC/ERChC za francouzske tymy (viz on transfer)
+Guinness Six Nations 2019 - nic
+Rugby World Cup 2019 - nic
+Premiership Rugby Cup - vše
